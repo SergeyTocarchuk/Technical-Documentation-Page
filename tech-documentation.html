@@ -11,72 +11,72 @@
     <nav id="navbar">
         <header>
             <img class="img" src="./pic/react_mini.png" alt='React logo'>
-            основные понятия
+            basic concepts
         </header>
         <ul>
-            <li><a class="nav-link" href="#Начало_работы">Начало работы</a></li>
-            <li><a class="nav-link" href="#Добавляем_React_на_сайт">Добавляем React на сайт</a></li>
-            <li><a class="nav-link" href="#Создаём_новое_React-приложение">Создаём новое React-приложение</a></li>
+            <li><a class="nav-link" href="#Start">Start</a></li>
+            <li><a class="nav-link" href="#Adding_React_to_the_Site">Adding React to the Site</a></li>
+            <li><a class="nav-link" href="#Building_a_new_React_app">Building a new React app</a></li>
             <li><a class="nav-link" href="#Hello_World">Hello World</a></li>
-            <li><a class="nav-link" href="#Знакомство_с_JSX">Знакомство с JSX</a></li>
-            <li><a class="nav-link" href="#Рендеринг_элементов">Рендеринг элементов</a></li>
-            <li><a class="nav-link" href="#Компоненты_и_пропсы">Компоненты и пропсы</a></li>
-            <li><a class="nav-link" href="#Философия_React">Философия React</a></li>
+            <li><a class="nav-link" href="#Introducing_JSX">Introducing JSX</a></li>
+            <li><a class="nav-link" href="#Rendering elements">Rendering elements</a></li>
+            <li><a class="nav-link" href="#Components_and_props">Components and props</a></li>
+            <li><a class="nav-link" href="#React_philosophy">React philosophy</a></li>
         </ul>
 
     </nav>
 
     <main id="main-doc">
-        <section id="#Начало_работы">
-            <header>Начало работы</header>
+        <section id="Start">
+            <header>Start</header>
             <article>
                 <p>
-                    React — это JavaScript-библиотека для разработки пользовательского интерфейса.
+                    React is a JavaScript library for user interface development.
                 </p>
                 <p>
-                    На этой странице мы сделаем небольшой обзор документации и других ресурсов, которые могут пригодиться при первом использовании React.
+                    On this page, we'll take a quick look at the documentation and other resources that may come in handy when using React for the first time.
                 </p>
-                <p>React изначально был спроектирован так, чтобы его можно было внедрять постепенно. Другими словами, вы можете начать с малого и использовать только ту функциональность React, которая необходима вам в данный момент. Информация в этом разделе будет полезна в любой ситуации: при первом знакомстве с React, при создании простой динамической HTML-страницы и даже при проектировании сложного React-приложения.
+                <p>React was designed from the ground up to be rolled out gradually. In other words, you can start small and only use the React functionality you need at the moment. The information in this section will be useful in any situation: when you first get to know React, when creating a simple dynamic HTML page, or even when designing a complex React application.
                 </p>
             </article>
         </section>
-        <section id="Добавляем_React_на_сайт">
-            <header>Добавляем React на сайт</header>
+        <section id="Adding_React_to_the_Site">
+            <header>Adding React to the Site</header>
             <article>
                 <p>
-                    Вы можете добавить React на свой сайт буквально за одну минуту. После этого можно разместить на сайте несколько динамических виджетов и постепенно наращивать использование React в своём проекте.
+                    You can add React to your site in literally one minute. After that, you can place several dynamic widgets on the site and gradually increase the use of React in your project.
                 </p>
                 
-                <h3>Шаг 1: Добавляем DOM-контейнер в HTML</h3>
+                <h3>Step 1: Adding a DOM-container to HTML</h3>
                 <p>
-                    Для начала, откройте HTML файл страницы, которую хотите отредактировать. Добавьте пустой тег &lt;div&gt; в месте, где вы хотите отобразить что-нибудь с помощью React. Например:
+                    First, open the HTML file of the page you want to edit. Add an empty tag &lt;div&gt; in the place where you want to render something with React. For instance:
                 </p>
                 <code>
-                    &lt;!-- ... остальной HTML ... --&gt;<br>
+                    &lt;!-- ... HTML code ... --&gt;<br>
                     &lt;div id="like_button_container"&gt;&lt;/div&gt;<br>
-                    &lt;!-- ... остальной HTML ... --&gt;<br>
+                    &lt;!-- ... HTML code ... --&gt;<br>
                 </code>
                 <p>
-                    Затем назначьте созданному &lt;div&gt; уникальный атрибут id. Это позволит впоследствии найти тег из JavaScript кода и отобразить React-компоненты внутри него.
+                    Then assign the created &lt;div&gt; unique id attribute. This will allow you to later find the tag from JavaScript code and display the React components inside it.
                 </p>
-                <h3>Шаг 2: Добавляем script-теги</h3>
+                <h3>Step 2: Adding script tags</h3>
                 <p>
-                    Теперь добавьте три &lt;script&gt;-тега перед закрывающим тегом &lt;body&gt;:
+                    Now add three &lt;script&gt;-tag before the closing tag &lt;body&gt;:
                 </p>
                 <code>
-                    &lt;!-- ... остальной HTML ... --&gt;<br>
-                    &lt;!-- Загрузим React. --&gt;<br>
-                    &lt;!-- Примечание: при деплое на продакшен замените «development.js» на «production.min.js». --&gt;<br>
+                    &lt;!-- ... HTML code... --&gt;<br>
+                    &lt;!-- Load React. --&gt;<br>
+                    &lt;!-- Note: when deploying to production, replace "development.js" with "production.min.js". --&gt;<br>
                     &lt;script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin&gt;&lt;/script&gt;<br>
                     &lt;script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin&gt;&lt;/script&gt;<br>
-                    &lt;!-- Загрузим наш React-компонент. --&gt;<br>
+                    &lt;!-- Load our React-component. --&gt;<br>
                     &lt;script src="like_button.js"&gt;&lt;/script&gt;<br>
                     &lt;/body&gt;<br>
                 </code>
-                <p>Первые два тега загружают React. Третий тег загружает код вашего собственного компонента.</p>
-                <h3>Шаг 3: Создаём React-компонент</h3>
-                <p>Создайте файл с именем like_button.js рядом с вашим HTML файлом.
-                Возьмите этот стартовый код и вставьте его в созданный ранее файл.
+                <p>The first two tags load React. The third tag loads the code for your own component.</p>
+                <h3>Step 3: Create React-component</h3>
+                <p>Create a file called like_button.js next to your HTML file.
+                    Take this starter code and paste it into the file you created earlier.
                 </p>
                 <code>
                     'use strict';<br>
@@ -99,20 +99,20 @@
                     }<br>
                 </code>
                 <p>
-                    Добавьте ещё 2 строки в конец файла like_button.js, после стартового кода:
+                    Add 2 more lines to the end of the like_button.js file, after the start code:
                 </p>
                 <code>
-                    // ... стартовый код ...<br>
+                    // ... code before ...<br>
                     const domContainer = document.querySelector('#like_button_container');<br>
                     ReactDOM.render(e(LikeButton), domContainer);
                 </code>
-                <p>Эти две строки кода ищут элемент &lt;div&gt;, который мы добавили на первом шаге, а затем отображают React-компонент с кнопкой «Нравится» внутри него.</p>
-                <h3>Готово!</h3>
-                <p>Вот и всё! Вы только что добавили свой первый React-компонент на страницу.</p>
+                <p>These two lines of code are looking for an element &lt;div&gt;, which we added in the first step, and then render a React component with a Like button inside it.</p>
+                <h3>Ready!</h3>
+                <p>That's it! You have just added your first React component to the page.</p>
             </article>
         </section>
-        <section id="Создаём_новое_React-приложение">
-            <header>Создаём новое React-приложение</header>
+        <section id="Building_a_new_React_app">
+            <header>Building a new React app</header>
             <article>
                 <p>
                     
@@ -127,32 +127,32 @@
                 </p>
             </article>
         </section>
-        <section id="Знакомство_с_JSX">
-            <header>Знакомство с JSX</header>
+        <section id="Introducing_JSX">
+            <header>Introducing JSX</header>
             <article>
                 <p>
                     
                 </p>
             </article>
         </section>
-        <section id="Рендеринг_элементов">
-            <header>Рендеринг элементов</header>
+        <section id="Rendering_elements">
+            <header>Rendering elements</header>
             <article>
                 <p>
                     
                 </p>
             </article>
         </section>
-        <section id="Компоненты_и_пропсы">
-            <header>Компоненты и пропсы</header>
+        <section id="Components_and_props">
+            <header>Components and props</header>
             <article>
                 <p>
                     
                 </p>
             </article>
         </section>
-        <section id="Философия_React">
-            <header>Философия React</header>
+        <section id="React_philosophy">
+            <header>React philosophy</header>
             <article>
                 <p>
                     
